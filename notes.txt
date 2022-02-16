@@ -1,0 +1,3 @@
+#Example of processing
+https://www.adrianbartnik.de/blog/annotation-processing/
+https://medium.com/@jintin/annotation-processing-in-java-3621cb05343a
