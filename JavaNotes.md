@@ -1,7 +1,7 @@
-#Java: The Complete Reference, Eleventh Edition, 11th Edition
-#####by Herbert Schildt
+# Java: The Complete Reference, Eleventh Edition, 11th Edition
+##### by Herbert Schildt
 
-##Chapter 2:
+## Chapter 2:
 - New keyword var introduced in jdk10, it infers data type from initialization(called type inference)
 - Declaring variable - type identifier [ = value ][, identifier [= value ] …];
 - Array syntax
@@ -11,19 +11,19 @@
   - Or variable = { e1 , e2 , e3 …}
 - Array has a property - length
 
-##Chapter 3, 4 & 5:
+## Chapter 3, 4 & 5:
 - Switch allows a string since Java7
 - Multiple statements in init and iter section in classical for loops are separated by commas for(init;cond;iter)
 - For-each loop syntax is for( type variable: collection). Type can be “var” (jdk10)
 - String has a method called length()
 
-##Chapter 7:
+## Chapter 7:
 - Inner class can be static and non-static. Static inner classes are not very useful. Classes can be in local block scope as well.
 - VARARGS - variable length argos supported since java 5
   - Syntax : function(type a , type … b)
     - B will be accessible inside the method as an array
 
-##Chapter 8 & 9:
+## Chapter 8 & 9:
 - Super keyword has 2 distinct uses 
   - As super() - in constructor
   - As super.<methods> - this is similar to this operator, but referring super class.
@@ -51,7 +51,7 @@
     - Can be called only from default methods of the interface
     - Or can be called from another private method from the interface.
 
-##Chapter 10:
+## Chapter 10:
 - The exception handling concepts in Java remains largely unchanged.
 - Hierarchy of Throwable->(Error, (Exception->RuntimeException)) remains.
 - try-catch(es)-finally handler along with throws declaration, throw keyword to throw an exception etc.. , all of them remain as-is.
@@ -64,7 +64,7 @@
     So just catch Exception and re-throw, but Java will check what exception can actually be caught and expects you to declare only that.
    (but you should not re-assign the error variable for that in the catch-block).
 
-##Chapter 11:
+## Chapter 11:
 - The concept of Threads - JVM is a process for the OS. Multi-tasking within a JVM is by threads. OS also supports thread.
 - Thread class in Java is basis for thread API in java
 - name and priority are 2 commonly referred properties
@@ -120,7 +120,7 @@ current thread is doing, causing serious problems. concept of wait and notify sh
   - Waiting - Thread waiting for a join to complete or waiting on wait() to be notified.
   - Thread.sleep does not cause release of locks but calling wait causes the release of lock
 
-##Chapter 12:
+## Chapter 12:
 - Enumeration - uses keyword enum - but it is basically a class that extends the standard Enum class .  
 Each of the values in enum are of the type of the specifc enum class - they are constants (public, static , final)  
   enum being classes, can have constructors with arguments. enum can have fields and methods. 
@@ -152,7 +152,7 @@ virtually anything in the code
 Java loaders can even read the class files and find it out - there are interesting ways to do this.  
 As application developers, for now it should be sufficient to just understand how a particular annotation works.  
 
-##Chapter 13:
+## Chapter 13:
 - Try with resources. The resource should implement the interface AutoClosable. All classes in java.io implement that interface. 
 Hence IO interfaces can be used with try with resource.
 We can also define custom resource and use them in this fashion - this approach takes away the manual task of closing the resources in a try catch block.
@@ -166,7 +166,7 @@ We can also define custom resource and use them in this fashion - this approach 
   - Compact profiles, introduced in Java SE 8, define subsets of the Java SE Platform API that can reduce the static size of the Java runtime on devices that have limited storage capacity.
   - compact1 - smallest run-time , compact2 - little bigger with jdbc and rni, compact3 - security features. - full SE profile includes awt, swing etc...
 
-##Chapter 14:
+## Chapter 14:
 - generics - If there is a single class that can operate generically over different types(restricted or unrestricted) of Object and returns those objects.  
  Generics elevates the need to operate at Object level by create typed variety of the generic object.
  Generics can also impose validation on generic types that can be given as input - with that the generic class is aware of the some details of the type of Object that would be passed to it as runtime.
@@ -201,7 +201,7 @@ We can also define custom resource and use them in this fashion - this approach 
   - Wild card generics can be used to create hierarchy - `A<? extends Integer>` automatically becomes a sub-class of `A<? extends Number>` and both are sub-class of `A<?>`
   - Diamond operator introduced in Java7 enables us to not retype the generic declaration again and compiler will infer it from the assignment and arguments.
   
-##Chapter 15
+## Chapter 15
 - Lambda expressions is essentially an anonymous method - they create an anonymous class. They cannot be executed on it own. We always need a interface using which this LE is assigned to variables or passed as parameters.  
 - Lambda is also called closures. interface used to handle LE are called function interfaces or SAM interface (SIngle Abstract Method).
 - SAM interface can be generic
@@ -219,7 +219,7 @@ We can also define custom resource and use them in this fashion - this approach 
    4. Predicate - Takes a type and returns a boolean - it is basically a filter. has **`test`** , `and` , `or` , `negate` and static methods `isEqual` and `not`.
 - Deciding to SKIP Modules functionality for NOW.
 
-##Chapter 16 - Java Modules introduced in Java9
+## Chapter 16 - Java Modules introduced in Java9
 - Java modules capability can basically group packages, declare dependecnies and usages between them. 
 - it can also selectively expose the components in them to other modules.
 - This makes it easier to manage a large project at one higher level - module
@@ -250,7 +250,7 @@ module com.mydeveloperplanet.jpmshello {
             - server
 - For more details, refer -  https://www.baeldung.com/java-9-modularity
 
-##Chapter 17 - String
+## Chapter 17 - String
 - Some basics I documented in https://jaganshome.blogspot.com/2020/08/java-interview-basics.html
 - String(immutable) , StringBuffer(Synchronized-mutable) , StringBuilder(Synchronized-mutable), all of them extend CharSequence.
 - `String(char chars[ ], int startIndex, int numChars)` - interesting constructor
@@ -264,7 +264,7 @@ module com.mydeveloperplanet.jpmshello {
 - toUpperCase, toLowerCase and join methods are available
 - reverse( ) method is available in StringBuffer
 
-##Chapter 18 - Exploring Java lang
+## Chapter 18 - Exploring Java lang
 - java.lang is part of the java.base module (java9)
 - typewrapper and few common utils are discussed.
 - Clonable interface - Only classes marked with this interface can be clonned. Clone method inside object is protected and simply does byte copy.  
@@ -276,7 +276,7 @@ module com.mydeveloperplanet.jpmshello {
 - java.lang.instrument - can add more instrumentation to Java.
 - Review the image on top of ch-18 of java complete reference.
 
-##Chapter 19 - The collections framework
+## Chapter 19 - The collections framework
 - java.util is part of the java.base module.
 - Collections are implemented using `interfaces`
 - Algorithms are implemented as static methods on Collections class.
@@ -298,50 +298,40 @@ module com.mydeveloperplanet.jpmshello {
 - `computeIfPresent` function triggers only if value is there, update if not null, remove if null.
 - of method is often used to create a small Set, Map etc... is a very handy util
 
-##Chapter 20 - Other util methods
+## Chapter 20 - Other util methods
 - There are ways to refer method references, static, object-method and arbitory reference to instance method
 - Option is very powerful for handling nulls in functional programming. But it also supports functions like map and filter.
 - lot of Function Interfaces documented in this chapter, all of them are very meaningful.
 
-##Chapter 21 - Exploring java.io
+## Chapter 21 - Exploring java.io
 - This talks about Stream(Binary) and Reader and Writer(Text) IO classes.
 - AutoClosable Interface , `File` handling etc...
 - Serializable interface , Object streams also discussed
 
-##Chapter 22 - Exploring java.nio
+## Chapter 22 - Exploring java.nio
 - It is a new design of IO but older java.io is not deprecated yet. built on two foundational items: buffers and channels.
 - Buffer holds data and channel represents a connection
 - Path interface refers a File path and is much more powerfull like path split, monitoring the file etc...
 
-#Chapter 23 - Networking
+## Chapter 23 - Networking
 - InetAddress can encapsulate both ip4 and ip6
 - TCP IP socket and related libraries are discussed
 - JAVA.NET.HTTP introduces helpers for handling HTTP requests into Java
 
-#Chapter 24 - is about awt event handling(UI)
+## Chapter 24 - is about awt event handling(UI)
 - Not required
 
-#Chapter 25 - about awt itself (UI)
+## Chapter 25 - about awt itself (UI)
 - Not required
 
-#Chapter 26 - about awt layout and controls.(UI)
+## Chapter 26 - about awt layout and controls.(UI)
 - Not required
 
-#Chapter 27 - Images handling and display
+## Chapter 27 - Images handling and display
 - Not required
 
-#Chapter 28 - The Concurrency Utilities
+## Chapter 28 - The Concurrency Utilities
 - Revise threads
 - 
 - Spend some time on this URL 
   https://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/
-
-
-
-
-  
-  
-
-
-
-
